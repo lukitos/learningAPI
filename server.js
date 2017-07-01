@@ -8,6 +8,9 @@ var knex = require('./db/knex');
 
 var index = require('./routes/indexRoutes');
 var tags = require('./routes/tagRoutes');
+var person = require('./routes/personRoutes');
+var asset = require('./routes/assetRoutes');
+var learning = require('./routes/learningRoutes');
 
 var app = express();
 
@@ -21,6 +24,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
 app.use('/api/tags', tags);
+app.use('/api/person', person);
+app.use('/api/assets', asset);
+app.use('/api/learning', learning);
 
 app.listen(port, function() {
   console.log("listening on port: ", port);
